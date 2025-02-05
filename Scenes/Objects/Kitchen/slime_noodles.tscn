@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://brlq6wt6y3fyp"]
+
+[ext_resource type="Texture2D" uid="uid://cffli8ln6kyg1" path="res://Assets/Art/PlaceholderArt.png" id="1_i1m68"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g74e3"]
+radius = 41.0
+height = 206.0
+
+[node name="Slime Noodles" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_i1m68")
+region_enabled = true
+region_rect = Rect2(934, 761, 206, 90)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_g74e3")

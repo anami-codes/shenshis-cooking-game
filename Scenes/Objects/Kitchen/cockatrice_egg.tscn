@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cj2hb6guy1fpx"]
+
+[ext_resource type="Texture2D" uid="uid://cffli8ln6kyg1" path="res://Assets/Art/PlaceholderArt.png" id="1_tunxl"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1lqcy"]
+radius = 59.0
+height = 164.0
+
+[node name="Cockatrice Egg" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_tunxl")
+region_enabled = true
+region_rect = Rect2(1166, 739, 118, 166)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_1lqcy")
