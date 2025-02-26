@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1p2uej52fif2"]
+[gd_scene load_steps=3 format=3 uid="uid://c1p2uej52fif2"]
 
 [ext_resource type="Texture2D" uid="uid://cffli8ln6kyg1" path="res://Assets/Art/PlaceholderArt.png" id="1_bgg44"]
+[ext_resource type="Script" path="res://Scripts/Interactables/food.gd" id="1_nxjns"]
 
 [node name="Veggies" type="Node2D"]
+script = ExtResource("1_nxjns")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_bgg44")
@@ -13,3 +15,5 @@ region_rect = Rect2(638, 755, 288, 149)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PackedVector2Array(-65, -30, -118, -22, -144, 9, -117, 61, -93, 66, -75, 77, 47, 67, 63, 60, 103, 69, 146, 48, 126, 0, 83, -46, 44, -47, 2, -74, -40, -61)
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cj2hb6guy1fpx"]
+[gd_scene load_steps=4 format=3 uid="uid://cj2hb6guy1fpx"]
 
 [ext_resource type="Texture2D" uid="uid://cffli8ln6kyg1" path="res://Assets/Art/PlaceholderArt.png" id="1_tunxl"]
+[ext_resource type="Script" path="res://Scripts/Interactables/food.gd" id="1_vrj2j"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1lqcy"]
 radius = 59.0
 height = 164.0
 
 [node name="Cockatrice Egg" type="Node2D"]
+script = ExtResource("1_vrj2j")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_tunxl")
@@ -17,3 +19,5 @@ region_rect = Rect2(1166, 739, 118, 166)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CapsuleShape2D_1lqcy")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

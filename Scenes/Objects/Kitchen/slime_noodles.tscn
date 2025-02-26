@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://brlq6wt6y3fyp"]
+[gd_scene load_steps=4 format=3 uid="uid://brlq6wt6y3fyp"]
 
+[ext_resource type="Script" path="res://Scripts/Interactables/food.gd" id="1_0ug5k"]
 [ext_resource type="Texture2D" uid="uid://cffli8ln6kyg1" path="res://Assets/Art/PlaceholderArt.png" id="1_i1m68"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g74e3"]
@@ -7,6 +8,7 @@ radius = 41.0
 height = 206.0
 
 [node name="Slime Noodles" type="Node2D"]
+script = ExtResource("1_0ug5k")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_i1m68")
@@ -18,3 +20,7 @@ region_rect = Rect2(934, 761, 206, 90)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_g74e3")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

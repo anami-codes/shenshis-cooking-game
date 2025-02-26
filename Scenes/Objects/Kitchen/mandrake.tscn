@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2bmqj831tau1"]
+[gd_scene load_steps=3 format=3 uid="uid://b2bmqj831tau1"]
 
 [ext_resource type="Texture2D" uid="uid://cffli8ln6kyg1" path="res://Assets/Art/PlaceholderArt.png" id="1_g8dcm"]
+[ext_resource type="Script" path="res://Scripts/Interactables/food.gd" id="1_r5k3a"]
 
 [node name="Mandrake" type="Node2D"]
+script = ExtResource("1_r5k3a")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_g8dcm")
@@ -13,3 +15,5 @@ region_rect = Rect2(904, 893, 242, 136)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PackedVector2Array(-116, 21, -47, -9, 35, -6, 48, -71, 84, -57, 108, -5, 124, 23, 102, 66, 52, 59, 46, 38, 25, 52, -47, 47, -66, 35, -91, 32)
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
